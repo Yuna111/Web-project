@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <!-- stylesheet reference -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Vue.js library-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    *{
+
+    }
+#CarList h5{
+
+color:#CCCCCC
+
+}
+#CarList li{
+
+
+}
+#card:hover {
+  transform: scale(1.02);
+  box-shadow: ;
+}
+#card{
+  width: 92%;
+  margin: 0 auto 20px;
+  box-shadow:;
+
+}
+
+
+#CarList p{
+  margin: 0 0 3px 0;
+  color:#B22222;
+}
+
+   </style>
+</head>
+<body onload="getCars();">
+<div class="container">
+
+    <div id="CarList" class="row mt-3">
+        <div class="col-md-4 mb-4" v-for="car in cars"> <!-- call vue function-->
+            <div class="card">
+                <img v-bind:src="'images/'+car.Model+'.jpg'" class="card-img-top img-fluid" style="height: 240px;">
+                <div class="card-body" style="padding-top: 10px; padding-bottom: 10px;">
+                    <h5 class="card-title">{{car.Model}}</h5>
+                    <ul class="list-unstyled">
+                        <li class="card-text"><b>Mileage: </b><p><b>{{car.Mileage}}</b></p></li>
+                        <li class="card-text"><b>Fuel type: </b><p><b>{{car.FuelType}}</b></p></li>
+                        <li class="card-text"><b>Seats: </b><p><b>{{car.Seats}}</b></p></li>
+                        <li class="card-text"><b>Price per day: </b><p><b>${{car.PricePerDay}}</b></p></li>
+                        <li class="card-text"><b>Availability: </b><p><b>{{car.Availability}}</b></p></li>
+                        <br>
+                        <li class="card-text"><b>Description: </b><h6>{{car.Description}}<h6></li>
+                    </ul>
+                      <br>
+                    <a href="#" v-on:click="addToCart(car.id);" class="btn btn-outline-primary">Add to Cart</a></div>
+                </div>
+
+        </div>
+
+    </div>
+</div>
+<script>
+var ajax = false;
+if (window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+    try {
+        ajax = new ActiveXObject("Msxm12.XMLHTTP")
+    } catch (e1) {
+        try {
+            ajax = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e2) {
+
+        }
+    }
+}
+if (!ajax) {
+    alert("Connect Error.");
+}
+
+var carData = [];
+
+function getCars() {    // Use Ajax to get data from xml database
+    if (ajax) {
+        ajax.open('get', 'cars.xml');
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                RebulidCars(this);
+            }
+        };
+        ajax.send();
+    }
+}
+
+function RebulidCars(xml) {    //rebuild the assosiative array for cars
+    var carList = xml.responseXML.getElementsByTagName('item');// get cars list from the category car
+    for (var i = 0; i < carList.length; i++) {
+        var carItem = {};
+        carItem['Category'] = carList.Category;
+        for (var j = 0; j < carList[i].childNodes.length; j++) {
+            carItem[carList[i].childNodes[j].nodeName] = carList[i].childNodes[j].innerHTML;
+        }
+        carData.push(carItem);
+    }
+}
+
+var cars = new Vue({ // use vue to display car arrays
+    el: '#CarList',
+    data: {
+        cars: carData
+    },
+    updated: function() { //resize frame
+        window.parent.document.getElementById("mainFrame").style.height = document.body.scrollHeight + "px";
+    },
+    methods: {
+        addToCart: function (id) {
+            checkAvailability(id);
+        }
+    }
+});
+
+function checkAvailability(id) {   //check if car is available;
+    if (ajax) {
+        ajax.open('get', 'check.php?id=' + id);
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                handleCheck(this);
+            }
+        };
+        ajax.send();
+    }
+}
+
+function handleCheck(xml) {
+    if (xml.responseText == "True") {
+        alert("Add successfully");
+    } else {
+        alert("Sorry, the car is not available now. Please try other cars.");
+    }
+}
+
+</script>
+
+</body>

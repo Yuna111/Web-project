@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <item Category="Sedan">
+        <id>1000</id>
+        <Availability>True</Availability>
+        <Brand>Holden</Brand>
+        <Model>Captiva</Model>
+        <Year>2015</Year>
+        <Mileage>5896</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>115</PricePerDay>
+        <Description>Captiva is a crossover SUV produced from 2006 to 2018 by GM Korea, previously known as Daewoo.</Description>
+      </item>
+
+    <item Category="Sedan">
+        <id>1001</id>
+        <Availability>False</Availability>
+        <Brand>BMW</Brand>
+        <Model>320i</Model>
+        <Year>2017</Year>
+        <Mileage>4536</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>85</PricePerDay>
+        <Description> The BMW 3 Series is a compact executive car manufactured by the German automaker BMW since May 1975. </Description>
+    </item>
+
+    <item Category="SUV">
+        <id>1002</id>
+        <Availability>True</Availability>
+        <Brand>Toyota</Brand>
+        <Model>Camry</Model>
+        <Year>2013</Year>
+        <Mileage>13254</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>100</PricePerDay>
+        <Description> Toyota Camry  is an automobile sold internationally by the Japanese manufacturer Toyota since 1982</Description>
+    </item>
+    <item Category="SUV">
+        <id>1003</id>
+        <Availability>True</Availability>
+        <Brand>Jeep</Brand>
+        <Model>Cherokee</Model>
+        <Year>2015</Year>
+        <Mileage>13562</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>200</PricePerDay>
+        <Description>Cherokee is very comfortable because I am a regular driver, I enjoy the comfort of the driver's seat</Description>
+    </item>
+    <item Category="Sedan">
+        <id>1004</id>
+        <Availability>False</Availability>
+        <Brand>Honda</Brand>
+        <Model>Civic</Model>
+        <Year>2016</Year>
+        <Mileage>4378</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>180</PricePerDay>
+        <Description>Honda Civic is a line of cars manufactured by Honda. A subcompact which gone through several generation</Description>
+    </item>
+     <item Category="SUV">
+        <id>1005</id>
+        <Availability>True</Availability>
+        <Brand>Volkswagen</Brand>
+        <Model>Golf</Model>
+        <Year>2014</Year>
+        <Mileage>234532425</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>210</PricePerDay>
+        <Description>Volkswagen Golf R is something special – a deliciously driveable hot hatch with a very real way</Description>
+
+    </item>
+    <item Category="Wagon">
+        <id>1006</id>
+        <Availability>True</Availability>
+        <Brand>Benz</Brand>
+        <Model>GLC</Model>
+        <Year>2019</Year>
+        <Mileage>344522</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>120</PricePerDay>
+        <Description>The Mercedes-Benz GLC-Class (X253/C253) is a compact luxury Crossover SUV for the 2016 model year </Description>
+    </item>
+
+    <item Category="SUV">
+        <id>1007</id>
+        <Availability>True</Availability>
+        <Brand>Suzuki</Brand>
+        <Model>Jimny</Model>
+        <Year>2018</Year>
+        <Mileage>24345</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>155</PricePerDay>
+        <Description>Jimny is a line of four-wheel drive off-road mini SUVs, made by Japanese automaker Suzuki since 1970  </Description>
+    </item>
+    <item Category="SUV">
+        <id>1008</id>
+        <Availability>False</Availability>
+        <Brand>Nissan</Brand>
+        <Model>X-trail</Model>
+        <Year>2012</Year>
+        <Mileage>4120</Mileage>
+        <FuelType>petrol</FuelType>
+        <Seats>5</Seats>
+        <PricePerDay>130</PricePerDay>
+        <Description>The X-Trail is a compact crossover SUV produced by the Japanese automaker Nissan since 2000. </Description>
+
+    </item>
+    <item Category="SUV">
+      item Category="SUV">
+          <id>1009</id>
+          <Availability>True</Availability>
+          <Brand>Hyundai</Brand>
+          <Model>Sonata</Model>
+          <Year>2013</Year>
+          <Mileage>6537</Mileage>
+          <FuelType>petrol</FuelType>
+          <Seats>5</Seats>
+          <PricePerDay>180</PricePerDay>
+          <Description>The Hyundai Sonata is a mid-size car produced by the South Korean manufacturer Hyundai since 1985.</Description>
+      </item>
+
+</cars>
